@@ -6,14 +6,56 @@
 #define BASE 0
 #define NAV  1
 #define SYM  2
-#define ADJ  3
+#define NAV2 3
+#define FUNC 4
+#define MACR 5
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+    macros {
+        m_save: m_save {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(S))>;
+        };
+        m_oros: m_oros {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp O &kp R &kp O &kp S &kp RET>;
+        };
+        m_o0: m_o0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp O &kp N0>;
+        };
+        m_o9: m_o9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp O &kp N9>;
+        };
+        m_ows: m_ows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp O &kp W &kp S>;
+        };
+        m_oan: m_oan {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp O &kp A &kp N &kp RET>;
+        };
+        m_b2vt: m_b2vt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp B &kp N2 &kp V &kp T>;
+        };
+        m_ohfr: m_ohfr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp O &kp H &kp F &kp R>;
+        };
+        m_oocc: m_oocc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp O &kp O &kp C &kp C>;
         };
     };
 
@@ -23,52 +65,61 @@
         base {
             display-name = "BASE";
             bindings = <
-                &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-                &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-                &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+                &mo NAV   &kp SQT  &kp COMMA &kp DOT &kp P &kp Y     &kp F     &kp G     &kp C     &kp R   &kp L  &kp BSPC
+                &mo SYM   &kp A    &kp O     &kp E   &kp U &kp I     &kp D     &kp H     &kp T     &kp N   &kp S  &kp MINUS
+                &kp LSHFT &kp SEMI &kp Q     &kp J   &kp K &kp X     &kp B     &kp M     &kp W     &kp V   &kp Z  &kp RSHFT
+                                       &kp TAB &kp RET &kp ESC       &kp RCTRL &kp SPACE &kp RALT
             >;
         };
 
         nav {
             display-name = "NAV";
             bindings = <
-                &kp TAB     &kp N1          &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-                &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-                &kp LSHFT   &studio_unlock  &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                                &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+                &trans &none &none    &none     &none     &none     &none     &none      &kp UP   &none      &none &kp Z
+                &none  &none &kp LALT &kp LCTRL &kp LSHFT &none     &none     &kp LEFT   &kp DOWN &kp RIGHT  &none &kp Y
+                &none  &none &none    &none     &kp RGUI  &none     &none     &none      &none    &none      &none &none
+                                            &kp C &kp V &kp X       &kp RCTRL &mo NAV2   &kp SPACE
             >;
         };
 
         sym {
             display-name = "SYM";
             bindings = <
-                &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-                &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-                &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                                          &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+                &none  &none &none    &none     &none     &none     &kp GRAVE &kp N1   &kp N2  &kp N3  &kp LBKT  &kp RBKT
+                &trans &none &kp LALT &kp LCTRL &kp LSHFT &none     &kp BSLH  &kp N4   &kp N5  &kp N6  &kp DOT   &kp EQUAL
+                &none  &none &none    &none     &kp RGUI  &none     &kp FSLH  &kp N7   &kp N8  &kp N9  &kp COMMA &kp MINUS
+                                       &mo MACR &kp RET &kp ESC     &mo FUNC  &kp N0   &kp CAPS
             >;
         };
 
-        adj {
-            display-name = "ADJ";
+        nav2 {
+            display-name = "NAV2";
             bindings = <
-                &mo TAB   &trans &kp F7 &kp F8 &kp F9 &kp F12   &kp C_VOL_DN &kp C_MUTE  &kp C_VOL_UP &trans &trans &kp BSPC
-                &kp LCTRL &trans &kp F4 &kp F5 &kp F6 &kp F11   &trans       &trans      &trans       &trans &trans &trans
-                &bt LSHFT &trans &kp F1 &kp F2 &kp F3 &kp F10   &trans       &trans      &trans       &trans &trans &trans
-                                   &kp LGUI &mo NAV &kp SPACE   &kp RET &mo 2 &kp RALT
+                &trans &none &none    &none     &none     &none     &none &none    &kp PG_UP &none   &none &kp DEL
+                &none  &none &kp LALT &kp LCTRL &kp LSHFT &none     &none &kp HOME &kp PG_DN &kp END &none &none
+                &none  &none &none    &none     &kp RGUI  &none     &none &none    &none     &none   &none &none
+                                       &kp TAB &kp RET &kp ESC      &none &trans   &none
             >;
         };
-        extra_1 {
-                status = "reserved";
+
+        func {
+            display-name = "FUNC";
+            bindings = <
+                &none  &none &none    &none     &none     &none     &none  &kp F1 &kp F2 &kp F3 &kp F10 &none
+                &trans &none &kp LALT &kp LCTRL &kp LSHFT &none     &none  &kp F4 &kp F5 &kp F6 &kp F11 &none
+                &none  &none &none    &none     &kp RGUI  &none     &none  &kp F7 &kp F8 &kp F9 &kp F12 &none
+                                            &none &none &none       &trans &none  &none
+            >;
         };
 
-        extra_2 {
-                status = "reserved";
-        };
-
-        extra_3 {
-                status = "reserved";
+        macr {
+            display-name = "MACR";
+            bindings = <
+                &none  &none &none    &none     &none     &none     &none   &m_oros &m_ows  &m_oan &none &none
+                &trans &none &kp LALT &kp LCTRL &kp LSHFT &none     &m_save &m_o0   &m_b2vt &m_o9  &none &none
+                &none  &none &none    &none     &kp RGUI  &none     &none   &m_ohfr &none   &none  &none &none
+                                          &trans &none &none        &none   &m_oocc &none
+            >;
         };
     };
 };
