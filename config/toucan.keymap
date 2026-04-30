@@ -15,63 +15,65 @@
         m_save: m_save {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
             bindings = <&kp LS(LG(S))>;
         };
         m_oros: m_oros {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
-            bindings = <&kp LALT &macro_wait_time 30 &kp O &kp R &kp O &kp S &kp RET>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&kp LALT &kp O &kp R &kp O &kp S &kp RET>;
         };
         m_o0: m_o0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
-            bindings = <&kp LALT &macro_wait_time 30 &kp O &kp N0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&kp LALT &kp O &kp N0>;
         };
         m_o9: m_o9 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
-            bindings = <&kp LALT &macro_wait_time 30 &kp O &kp N9>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&kp LALT &kp O &kp N9>;
         };
         m_ows: m_ows {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
-            bindings = <&kp LALT &macro_wait_time 30 &kp O &kp W &kp S>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&kp LALT &kp O &kp W &kp S>;
         };
         m_oan: m_oan {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
-            bindings = <&kp LALT &macro_wait_time 30 &kp O &kp A &kp N &kp RET>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&kp LALT &kp O &kp A &kp N &kp RET>;
         };
         m_b2vt: m_b2vt {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
-            bindings = <&kp LALT &macro_wait_time 30 &kp B &kp N2 &kp V &kp T>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&kp LALT &kp B &kp N2 &kp V &kp T>;
         };
         m_ohfr: m_ohfr {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
-            bindings = <&kp LALT &macro_wait_time 30 &kp O &kp H &kp F &kp R>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&kp LALT &kp O &kp H &kp F &kp R>;
         };
         m_oocc: m_oocc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
-            bindings = <&kp LALT &macro_wait_time 30 &kp O &kp O &kp C &kp C>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&kp LALT &kp O &kp O &kp C &kp C>;
         };
     };
 
