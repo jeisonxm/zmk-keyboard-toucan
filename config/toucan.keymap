@@ -84,7 +84,7 @@
                 &mo NAV   &kp SQT  &kp COMMA &kp DOT &kp P &kp Y     &kp F     &kp G     &kp C     &kp R   &kp L  &kp BSPC
                 &mo SYM   &kp A    &kp O     &kp E   &kp U &kp I     &kp D     &kp H     &kp T     &kp N   &kp S  &kp MINUS
                 &kp LSHFT &kp SEMI &kp Q     &kp J   &kp K &kp X     &kp B     &kp M     &kp W     &kp V   &kp Z  &kp RSHFT
-                                       &kp TAB &kp RET &kp ESC       &kp RCTRL &kp SPACE &kp RALT
+                                       &kp TAB &kp RET &kp ESC       &kp RALT  &kp SPACE &kp RCTRL
             >;
         };
 
@@ -94,7 +94,7 @@
                 &trans &none &none    &none     &none     &none     &none     &none      &kp UP   &none      &none &kp Z
                 &none  &none &kp LALT &kp LCTRL &kp LSHFT &none     &none     &kp LEFT   &kp DOWN &kp RIGHT  &none &kp Y
                 &none  &none &none    &none     &kp RGUI  &none     &none     &none      &none    &none      &none &none
-                                            &kp C &kp V &kp X       &kp RCTRL &mo NAV2   &kp SPACE
+                                            &kp C &kp V &kp X       &kp SPACE &mo NAV2  &kp RCTRL
             >;
         };
 
@@ -104,7 +104,7 @@
                 &none  &none &none    &none     &none     &none     &kp GRAVE &kp N1   &kp N2  &kp N3  &kp LBKT  &kp RBKT
                 &trans &none &kp LALT &kp LCTRL &kp LSHFT &none     &kp BSLH  &kp N4   &kp N5  &kp N6  &kp DOT   &kp EQUAL
                 &none  &none &none    &none     &kp RGUI  &none     &kp FSLH  &kp N7   &kp N8  &kp N9  &kp COMMA &kp MINUS
-                                       &mo MACR &kp RET &kp ESC     &mo FUNC  &kp N0   &kp CAPS
+                                       &mo MACR &kp RET &kp ESC     &kp CAPS  &kp N0   &mo FUNC
             >;
         };
 
@@ -124,7 +124,7 @@
                 &none  &none &none    &none     &none     &none     &none  &kp F1 &kp F2 &kp F3 &kp F10 &none
                 &trans &none &kp LALT &kp LCTRL &kp LSHFT &none     &none  &kp F4 &kp F5 &kp F6 &kp F11 &none
                 &none  &none &none    &none     &kp RGUI  &none     &none  &kp F7 &kp F8 &kp F9 &kp F12 &none
-                                            &none &none &none       &trans &none  &none
+                                            &none &none &none       &none  &none  &trans
             >;
         };
 
