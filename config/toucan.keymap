@@ -10,6 +10,10 @@
 #define FUNC 4
 #define MACR 5
 
+&glidepoint_listener {
+    status = "okay";
+};
+
 / {
     macros {
         m_save: m_save {
